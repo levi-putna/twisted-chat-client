@@ -84,6 +84,12 @@
     border: none;
     padding: 0 15px;
     margin-right: 10px;
+    background-color: #ffffff;
+    margin-bottom: 0 !important;
+}
+
+.input:focus {
+    border: none;
 }
 
 .sendButton {
@@ -93,7 +99,7 @@
     background-color: #2196f3;
     color: white;
     font-weight: bold;
-    padding: 0 15px;
+    padding: 0 15px !important;
     cursor: pointer;
 }
 

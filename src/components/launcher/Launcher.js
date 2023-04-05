@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import Icon from '../Icon';
 import {
-    useTransition,
     useSpring,
-    useChain,
-    config,
     animated,
-    useSpringRef,
 } from '@react-spring/web'
 
 import styles from "./launcher.module.css";
@@ -16,7 +12,6 @@ function Launcher({ onClick, showModal }) {
 
     const [expand, setExpand] = useState(false);
     const [open, setOpen] = useState(false);
-    const [chat, setChat] = useState(false);
 
     const expandProps = useSpring({
         height: !expand ? '10%' : '90%',
@@ -29,9 +24,6 @@ function Launcher({ onClick, showModal }) {
     const fadeProps = useSpring({
         opacity: open ? 1 : 0,
         display: expand ? 'block' : 'none',
-        onRest: () => {
-            setChat(open);
-        }
     });
 
     const backgroundProps = useSpring({

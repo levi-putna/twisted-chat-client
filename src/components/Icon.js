@@ -9,6 +9,7 @@ function Icon() {
       strokeMiterlimit="2"
       clipRule="evenodd"
       viewBox="0 0 1663 1505"
+      style={{ display: "block", width: "60px", height: "60px" }}
     >
       <circle
         cx="1640.87"
