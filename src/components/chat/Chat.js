@@ -3,6 +3,8 @@ import styles from './chat.module.css';
 import Message from './Message';
 import Loading from './Loading';
 
+const CHAT_URL = process.env.REACT_APP_CHAT_URL;
+
 const Chat = () => {
     const [messages, setMessages] = useState([{
         role: "assistant",
@@ -29,14 +31,14 @@ const Chat = () => {
 
     const handleSendMessage = async () => {
 
-        //messages.push({ content: inputValue, role: 'user', timestamp: Date.now() });
-        setMessages([...messages, { content: inputValue, role: 'user', timestamp: Date.now() }]);
+        messages.push({ content: inputValue, role: 'user', timestamp: Date.now() });
+        setMessages([...messages]);
 
         if (inputValue.trim()) {
             setIsSending(true);
 
             try {
-                const response = await fetch('http://localhost:3000/chat', {
+                const response = await fetch(CHAT_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
