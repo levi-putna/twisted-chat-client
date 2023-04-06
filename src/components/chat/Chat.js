@@ -30,6 +30,7 @@ const Chat = () => {
     }, [messages]);
 
     const handleSendMessage = async () => {
+        const context = messages;
 
         messages.push({ content: inputValue, role: 'user', timestamp: Date.now() });
         setMessages([...messages]);
@@ -44,7 +45,7 @@ const Chat = () => {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        context: messages,
+                        context: context,
                         message: inputValue
                     }),
                 });
