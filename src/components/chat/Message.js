@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMermaid from 'remark-mermaidjs';
+import simplePlantUml from '@akebifiky/remark-simple-plantuml';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
@@ -37,7 +39,7 @@ const Message = ({ message }) => {
         <div className={`${styles.message} ${messageClass}`}>
             <div className={styles.messageContentWrapper}>
                 <div className={`${styles.messageContent} ${contentClass}`}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ code }}>{message.content}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm,remarkMermaid,simplePlantUml]} components={{ code }}>{message.content}</ReactMarkdown>
                 </div>
                 <div className={`${styles.timestampContainer}`}>
                     <div className={timestampClass}>

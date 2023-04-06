@@ -81,15 +81,15 @@
     flex: 1;
     height: 30px;
     border-radius: 15px;
-    border: none;
-    padding: 0 15px;
+    border: none !important;
+    padding: 0 15px !important;
     margin-right: 10px;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     margin-bottom: 0 !important;
 }
 
 .input:focus {
-    border: none;
+    border: none !important;
 }
 
 .sendButton {
