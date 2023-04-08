@@ -96,6 +96,11 @@
     border: none !important;
 }
 
+.input[disabled] {
+    background-color: transparent !important;
+    cursor: not-allowed; /* change cursor to not-allowed for disabled input */
+  }
+
 .sendButton {
     height: 30px;
     border-radius: 15px;
@@ -110,6 +115,10 @@
 .timestampContainer {
     display: flex;
     justify-content: flex-end;
+}
+
+.timestampContainerReply {
+    justify-content: start !important;
 }
 
 .timestamp {

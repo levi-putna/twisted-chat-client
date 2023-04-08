@@ -41,6 +41,7 @@ const Chat = () => {
             try {
                 const response = await fetch(CHAT_URL, {
                     method: 'POST',
+                    timeout: 60000, // long 60 sec timeout as OpenAPI is still in beta and can be a little slow in responding. 
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -55,9 +56,7 @@ const Chat = () => {
                 setInputValue('');
             } catch (error) {
                 console.error(error);
-                if (error.response && error.response.status === 503) {
-                    setMessages([...messages, { content: "Oops, we are a little busy at the moment, please try again in a little bit", role: 'assistant', timestamp: Date.now() }]);
-                  }
+                setMessages([...messages, { content: "Oops, i'm still a work in progress and something went wrong. Please wait a moment then try again.\n\nIf you want to explain to me what you did to cause the error, I can send an email to Levi to try and fix it.", role: 'assistant', timestamp: Date.now() }]);
             } finally {
                 setIsSending(false);
             }

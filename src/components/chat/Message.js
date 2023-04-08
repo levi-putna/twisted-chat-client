@@ -28,12 +28,9 @@ const code = ({ node, inline, className, children, ...props }) => {
 const Message = ({ message }) => {
     const isUser = message.role === "user";
     const messageClass = isUser ? styles.userMessage : styles.replyMessage;
-    const contentClass = isUser
-        ? styles.userMessageContent
-        : styles.replyMessageContent;
-    const timestampClass = isUser
-        ? `${styles.timestamp} ${styles.timestampRight}`
-        : styles.timestamp;
+    const contentClass = isUser ? styles.userMessageContent : styles.replyMessageContent;
+    const timestampClass = isUser ? `${styles.timestamp} ${styles.timestampRight}` : styles.timestamp;
+    const timestampContainerReply = !isUser ? styles.timestampContainerReply : '';
 
     return (
         <div className={`${styles.message} ${messageClass}`}>
@@ -41,7 +38,7 @@ const Message = ({ message }) => {
                 <div className={`${styles.messageContent} ${contentClass}`}>
                     <ReactMarkdown remarkPlugins={[remarkGfm,remarkMermaid,simplePlantUml]} components={{ code }}>{message.content}</ReactMarkdown>
                 </div>
-                <div className={`${styles.timestampContainer}`}>
+                <div className={`${styles.timestampContainer} ${timestampContainerReply}`}>
                     <div className={timestampClass}>
                         {new Date(message.timestamp).toLocaleString()}
                     </div>
