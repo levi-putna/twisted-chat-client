@@ -65,8 +65,16 @@
     word-break: break-word;
 }
 
-.messageContent code {
-    font-size: .8rem !important;
+.messageContent code,
+.messageContent code * {
+    font-size: .9rem !important;
+    background-color: #e0e0e0;
+}
+
+.messageContent svg,
+.messageContent svg * {
+    width: 100% !important;
+    width: auto !important;
 }
 
 .userMessageContent {
@@ -98,8 +106,9 @@
 
 .input[disabled] {
     background-color: transparent !important;
-    cursor: not-allowed; /* change cursor to not-allowed for disabled input */
-  }
+    cursor: not-allowed;
+    /* change cursor to not-allowed for disabled input */
+}
 
 .sendButton {
     height: 30px;
