@@ -55,6 +55,9 @@ const Chat = () => {
                 setInputValue('');
             } catch (error) {
                 console.error(error);
+                if (error.response && error.response.status === 503) {
+                    setMessages([...messages, { content: "Oops, we are a little busy at the moment, please try again in a little bit", role: 'assistant', timestamp: Date.now() }]);
+                  }
             } finally {
                 setIsSending(false);
             }

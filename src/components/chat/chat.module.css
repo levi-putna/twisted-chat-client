@@ -65,6 +65,10 @@
     word-break: break-word;
 }
 
+.messageContent code {
+    font-size: .8rem !important;
+}
+
 .userMessageContent {
     background-color: #d6f5c6;
     align-self: flex-end;
