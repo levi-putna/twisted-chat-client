@@ -19,7 +19,7 @@
     max-width: 80%;
 }
 
-.message>* {
+.message * {
     max-width: 100%;
 }
 
