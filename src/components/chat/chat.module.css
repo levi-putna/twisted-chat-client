@@ -68,13 +68,11 @@
 .messageContent code,
 .messageContent code * {
     font-size: .9rem !important;
-    background-color: #e0e0e0;
 }
 
 .messageContent svg,
 .messageContent svg * {
-    width: 100% !important;
-    width: auto !important;
+
 }
 
 .userMessageContent {

@@ -7,6 +7,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import styles from './chat.module.css';
+import ErrorBoundary from '../error/ErrorBoundary';
 
 const code = ({ node, inline, className, children, ...props }) => {
     const match = /language-(\w+)/.exec(className || '')
@@ -36,7 +37,9 @@ const Message = ({ message }) => {
         <div className={`${styles.message} ${messageClass}`}>
             <div className={styles.messageContentWrapper}>
                 <div className={`${styles.messageContent} ${contentClass}`}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm,remarkMermaid,simplePlantUml]} components={{ code }}>{message.content}</ReactMarkdown>
+                    <ErrorBoundary>
+                        <ReactMarkdown remarkPlugins={[remarkGfm, remarkMermaid, simplePlantUml]} components={{ code }}>{message.content}</ReactMarkdown>
+                    </ErrorBoundary>
                 </div>
                 <div className={`${styles.timestampContainer} ${timestampContainerReply}`}>
                     <div className={timestampClass}>

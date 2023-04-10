@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import './App.css';
+import styles from "./app.module.css";
 import Launcher from './components/launcher/Launcher';
+import Chat from "./components/chat/Chat";
 
 const App = () => {
     const [showModal, setShowModal] = useState(false);
@@ -14,8 +15,10 @@ const App = () => {
     };
 
     return (
-        <div>
-            <Launcher onClick={handleShowModal} showModal={showModal} />
+        <div className={styles.container}>
+            <div className={styles.frame}>
+                <Chat />
+            </div>
         </div>
     );
 };
