@@ -26,6 +26,7 @@
     "build": "react-scripts build && node buildLoader.js",
     "build-client": "react-scripts build",
     "build-loader": "node buildLoader.js",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -50,6 +51,7 @@
   "devDependencies": {
     "concurrently": "^8.0.1",
     "fs-extra": "^11.1.1",
+    "gh-pages": "^5.0.0",
     "react-app-rewired": "^2.2.1",
     "serve": "^14.2.0",
     "uglify-js": "^3.17.4"
