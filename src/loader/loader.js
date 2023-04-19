@@ -62,6 +62,12 @@
         buttonFrame.style.border = "none";
         buttonFrame.style.overflow = "hidden";
 
+        // Wait for the iframe to load then style the body
+        buttonFrame.addEventListener("load", () => {
+            const body = buttonFrame.contentWindow.document.body;
+            body.style.overflow = "hidden";
+        });
+
         // Create the button element
         const button = document.createElement("button");
 
