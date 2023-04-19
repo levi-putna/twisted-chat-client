@@ -27,7 +27,7 @@
     "build": "react-scripts build && node buildLoader.js",
     "build-client": "react-scripts build",
     "build-loader": "node buildLoader.js",
-    "deploy": "gh-pages -d build",
+    "deploy": "yarn build && gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

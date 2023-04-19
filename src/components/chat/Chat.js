@@ -39,17 +39,22 @@ const Chat = () => {
             setIsSending(true);
 
             try {
-                const response = await fetch(CHAT_URL, {
-                    method: 'POST',
-                    timeout: 60000, // long 120 sec timeout as OpenAPI is still in beta and can be a little slow in responding. 
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        context: context,
-                        message: inputValue
+                const response = await Promise.race([
+                    fetch(CHAT_URL, {
+                        method: 'POST',
+                        timeout: 120000, // 2 minutes timeout
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            context: context,
+                            message: inputValue
+                        }),
                     }),
-                });
+                    new Promise((resolve, reject) => {
+                        setTimeout(() => reject(new Error('Timeout')), 120000); // 2 minutes timeout
+                    })
+                ]);
 
                 const data = await response.json();
                 setMessages([...messages, { content: data.message, role: 'assistant', timestamp: Date.now() }]);

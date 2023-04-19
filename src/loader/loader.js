@@ -14,14 +14,13 @@
         widget.style.width = "600px";
         widget.style.height = "min(704px, 100% - 104px)";
         widget.style.maxHeight = "800px";
-        widget.style.position = "absolute";
+        widget.style.position = "fixed";
         widget.style.bottom = "84px";
         widget.style.left = "20px";
         widget.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 5px 40px";
 
         // Apply mobile-specific styles for screen widths <= 600px
         if (window.matchMedia("(max-width: 600px)").matches) {
-            widget.style.position = "fixed";
             widget.style.top = "0px";
             widget.style.bottom = "0px";
             widget.style.left = "0px";
@@ -61,6 +60,7 @@
         buttonFrame.style.bottom = "20px";
         buttonFrame.style.left = "20px";
         buttonFrame.style.border = "none";
+        buttonFrame.style.overflow = "hidden";
 
         // Create the button element
         const button = document.createElement("button");
@@ -89,7 +89,7 @@
         });
 
 
-        chatFrame.addEventListener("load", () => iframe.style.display = "block");
+        chatFrame.addEventListener("load", () => buttonFrame.style.display = "block");
 
         // Add an event listener to the button to log a message when clicked
         button.addEventListener("click", () => {
