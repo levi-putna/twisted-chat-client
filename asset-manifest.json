@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/twisted-chat-client/static/css/main.09a45cff.css",
-    "main.js": "/twisted-chat-client/static/js/main.66995d7e.js",
+    "main.css": "/twisted-chat-client/static/css/main.a75ca628.css",
+    "main.js": "/twisted-chat-client/static/js/main.936a4647.js",
     "static/js/992.1c61be54.chunk.js": "/twisted-chat-client/static/js/992.1c61be54.chunk.js",
     "static/js/799.55fbb8a7.chunk.js": "/twisted-chat-client/static/js/799.55fbb8a7.chunk.js",
     "static/js/811.b1ad5030.chunk.js": "/twisted-chat-client/static/js/811.b1ad5030.chunk.js",
     "static/js/787.19a6038e.chunk.js": "/twisted-chat-client/static/js/787.19a6038e.chunk.js",
     "index.html": "/twisted-chat-client/index.html",
-    "main.09a45cff.css.map": "/twisted-chat-client/static/css/main.09a45cff.css.map",
-    "main.66995d7e.js.map": "/twisted-chat-client/static/js/main.66995d7e.js.map",
+    "main.a75ca628.css.map": "/twisted-chat-client/static/css/main.a75ca628.css.map",
+    "main.936a4647.js.map": "/twisted-chat-client/static/js/main.936a4647.js.map",
     "992.1c61be54.chunk.js.map": "/twisted-chat-client/static/js/992.1c61be54.chunk.js.map",
     "799.55fbb8a7.chunk.js.map": "/twisted-chat-client/static/js/799.55fbb8a7.chunk.js.map",
     "811.b1ad5030.chunk.js.map": "/twisted-chat-client/static/js/811.b1ad5030.chunk.js.map",
     "787.19a6038e.chunk.js.map": "/twisted-chat-client/static/js/787.19a6038e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.09a45cff.css",
-    "static/js/main.66995d7e.js"
+    "static/css/main.a75ca628.css",
+    "static/js/main.936a4647.js"
   ]
 }
